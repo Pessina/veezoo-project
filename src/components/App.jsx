@@ -12,7 +12,12 @@ const App = () => {
   const [render, setRender] = useState(false);
 
   const getData = () => {
-    getFileTree().then((res) => { store.dispatch(setFileTree(res.data)); setRender(true); });
+    getFileTree().then((res) => {
+      if (res) {
+        store.dispatch(setFileTree(res.data));
+        setRender(true);
+      }
+    });
   };
 
   useEffect(getData, []);

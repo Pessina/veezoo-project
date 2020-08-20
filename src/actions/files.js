@@ -15,8 +15,8 @@ export const removeFile = (id) => ({
   id,
 });
 
-export const startRemoveFile = (id) => (dispatch) => removeFileDb(id).then(() => {
-  dispatch(removeFile(id));
+export const startRemoveFile = (id) => (dispatch) => removeFileDb(id).then((res) => {
+  if (res) dispatch(removeFile(id));
 });
 
 export const updateFile = (file) => ({
@@ -24,6 +24,6 @@ export const updateFile = (file) => ({
   file,
 });
 
-export const startUpdateFile = (file) => (dispatch) => updateFileDb(file).then(() => {
-  dispatch(updateFile(file));
+export const startUpdateFile = (file) => (dispatch) => updateFileDb(file).then((res) => {
+  if (res) dispatch(updateFile(file));
 });
