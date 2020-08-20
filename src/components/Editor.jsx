@@ -57,13 +57,13 @@ class Editor extends React.PureComponent {
     const { file } = this.state;
     const { openFile } = this.props;
 
-    if (!openFile || !file) return <div>There is no file selected</div>;
+    if (!openFile || !file) return <h3>There is no file selected</h3>;
 
     return (
       <>
-        <form onSubmit={this.save} className="editor__content">
-          <input value={file.name} onChange={this.onChangeInput} name="name" className="editor__title" />
-          <textarea value={file.content} onChange={this.onChangeInput} name="content" className="editor__content" />
+        <form onSubmit={this.save} className="editor-form">
+          <input value={file.name} onChange={this.onChangeInput} name="name" className="input editor__title " />
+          <textarea value={file.content} onChange={this.onChangeInput} name="content" className="editor__content input" />
           <div className="editor-buttons__container">
             <button onClick={this.remove} type="button" className="editor-button editor-button__delete button">Delete</button>
             <button type="submit" className="editor-button editor-button__save button">Save</button>

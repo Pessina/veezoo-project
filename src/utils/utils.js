@@ -1,3 +1,5 @@
+import Swal from 'sweetalert2';
+
 export const removeRecursivelyFiletree = (filetree, id) => {
   // If its not a directory return the element
   if (!(filetree instanceof Array)) return filetree;
@@ -35,3 +37,17 @@ export const updateRecursivelyFiletree = (filetree, file) => {
 
   return temp;
 };
+
+export const errorAlert = (message) => Swal.fire({
+  icon: 'error',
+  title: 'Oops...',
+  text: `Error getting the filetree: ${message}`,
+});
+
+export const successAlert = (message) => Swal.fire({
+  position: 'top-end',
+  icon: 'success',
+  title: message,
+  showConfirmButton: false,
+  timer: 1500,
+});

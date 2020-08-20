@@ -31,6 +31,7 @@ const App = () => {
     <Provider store={store}>
       <div className="main__container">
         <div className="sidebar__container">
+          <h2>Files</h2>
           <Sidebar />
         </div>
         <div className="editor__container">
